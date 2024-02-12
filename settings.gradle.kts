@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "MeliPrueba"
 include(":app")
- 
+include(":core")
