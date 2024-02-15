@@ -60,15 +60,26 @@ dependencies {
     implementation(libs.com.squareup.retrofit2.retrofit)
     implementation(libs.squareup.converter.gson)
 
+    // Coroutines
+    implementation (libs.kotlinx.coroutines.core)
+    implementation (libs.kotlinx.coroutines.android)
+
+    //Dagger - Hilt
+    implementation (libs.hilt.android)
+    kapt (libs.hilt.android.compiler)
+    kapt (libs.androidx.hilt.hilt.compiler)
+    implementation (libs.androidx.hilt.navigation.compose)
+
     // TO REQUEST PERMISSIONS
     implementation(libs.accompanist.permissions)
 
     // compose navigation
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.coil.compose)
     implementation(libs.androidx.animation)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.activity.compose)
     implementation(platform(libs.compose.bom))
-    implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
 
     implementation(libs.core.ktx)
