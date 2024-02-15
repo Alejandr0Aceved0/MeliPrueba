@@ -6,10 +6,10 @@ import com.ingeacev.meliprueba.networking.Result
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class GetDefaultProducts @Inject constructor(
+class GetProductsUseCase @Inject constructor(
     private val repository: ProductRepository
 ) {
-    suspend operator fun invoke(): Flow<Result<List<Product>>> {
-        return repository.getDefaultProducts()
+    suspend operator fun invoke(description: String): Flow<Result<List<Product>>> {
+        return repository.getProducts(description)
     }
 }

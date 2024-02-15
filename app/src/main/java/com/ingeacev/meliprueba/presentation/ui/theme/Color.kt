@@ -1,4 +1,4 @@
-package com.ingeacev.meliprueba.ui.theme
+package com.ingeacev.meliprueba.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

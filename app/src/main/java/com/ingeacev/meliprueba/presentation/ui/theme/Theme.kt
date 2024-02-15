@@ -1,4 +1,4 @@
-package com.ingeacev.meliprueba.ui.theme
+package com.ingeacev.meliprueba.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build
