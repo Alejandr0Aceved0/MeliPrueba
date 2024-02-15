@@ -62,7 +62,7 @@ class ProductRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun getProductDetail(itemId: String): Flow<Result<ProductDescription>> = flow {
+    override suspend fun getProductDetails(itemId: String): Flow<Result<ProductDescription>> = flow {
         emit(Result.Loading())
         try {
             val response = meliApi.descriptionItem(itemId).toProductDescription()
