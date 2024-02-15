@@ -1,4 +1,4 @@
-package com.ingeacev.meliprueba
+package com.ingeacev.meliprueba.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

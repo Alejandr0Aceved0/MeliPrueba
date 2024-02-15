@@ -1,6 +1,7 @@
 package com.ingeacev.meliprueba.domain.repositories
 
 import com.ingeacev.meliprueba.domain.model.Product
+import com.ingeacev.meliprueba.domain.model.ProductDescription
 import com.ingeacev.meliprueba.domain.model.ProductDetails
 import com.ingeacev.meliprueba.networking.Result
 import kotlinx.coroutines.flow.Flow
@@ -11,5 +12,5 @@ interface ProductRepository {
 
     fun getDefaultProducts(): Flow<Result<List<Product>>>
 
-    suspend fun getProductDetail(id: Int): Result<ProductDetails>
+    suspend fun getProductDetail(itemId : String): Flow<Result<ProductDescription>>
 }

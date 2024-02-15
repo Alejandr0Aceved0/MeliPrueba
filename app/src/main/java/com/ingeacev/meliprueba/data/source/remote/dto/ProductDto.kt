@@ -1,5 +1,6 @@
 package com.ingeacev.meliprueba.data.source.remote.dto
 
+import com.ingeacev.meliprueba.data.source.remote.dto.search_response.Shipping
 import com.ingeacev.meliprueba.domain.model.ProductDetails
 
 data class ProductDto(

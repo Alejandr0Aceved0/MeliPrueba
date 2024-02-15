@@ -1,4 +1,12 @@
-package com.ingeacev.meliprueba.data.source.remote.dto
+package com.ingeacev.meliprueba.data.source.remote.dto.search_response
+
+import com.ingeacev.meliprueba.data.source.remote.dto.search_response.Address
+import com.ingeacev.meliprueba.data.source.remote.dto.search_response.Attribute
+import com.ingeacev.meliprueba.data.source.remote.dto.search_response.DifferentialPricing
+import com.ingeacev.meliprueba.data.source.remote.dto.search_response.Installments
+import com.ingeacev.meliprueba.data.source.remote.dto.search_response.Seller
+import com.ingeacev.meliprueba.data.source.remote.dto.search_response.SellerAddress
+import com.ingeacev.meliprueba.data.source.remote.dto.search_response.Shipping
 
 data class Result(
     var accepts_mercadopago: Boolean?,

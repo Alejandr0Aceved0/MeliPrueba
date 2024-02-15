@@ -1,4 +1,4 @@
-package com.ingeacev.meliprueba.data.source.remote.dto
+package com.ingeacev.meliprueba.data.source.remote.dto.search_response
 
 data class Attribute(
     var attribute_group_id: String?,

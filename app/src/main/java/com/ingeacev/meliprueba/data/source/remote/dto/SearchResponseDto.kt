@@ -1,5 +1,7 @@
 package com.ingeacev.meliprueba.data.source.remote.dto
 
+import com.ingeacev.meliprueba.data.source.remote.dto.search_response.Paging
+import com.ingeacev.meliprueba.data.source.remote.dto.search_response.Result
 import com.ingeacev.meliprueba.domain.model.Product
 
 data class SearchResponseDto(

@@ -2,7 +2,9 @@ package com.ingeacev.meliprueba.data.repositories
 
 import com.ingeacev.meliprueba.data.source.remote.MeliApi
 import com.ingeacev.meliprueba.data.source.remote.dto.toProduct
+import com.ingeacev.meliprueba.data.source.remote.dto.toProductDescription
 import com.ingeacev.meliprueba.domain.model.Product
+import com.ingeacev.meliprueba.domain.model.ProductDescription
 import com.ingeacev.meliprueba.domain.model.ProductDetails
 import com.ingeacev.meliprueba.domain.repositories.ProductRepository
 import com.ingeacev.meliprueba.networking.Result
@@ -15,6 +17,7 @@ import javax.inject.Inject
 class ProductRepositoryImpl @Inject constructor(
     private val meliApi: MeliApi
 ) : ProductRepository {
+
     override fun getProducts(description: String): Flow<Result<List<Product>>> = flow {
         emit(Result.Loading())
         try {
@@ -30,14 +33,14 @@ class ProductRepositoryImpl @Inject constructor(
         } catch (e: IOException) {
             emit(
                 Result.Error(
-                    message = "No se encuetra conexion con el servidor, revisa tu conexion",
+                    message = "No se encuentra conexion con el servidor, revisa tu conexion",
                     data = null
                 )
             )
         }
     }
 
-    override fun getDefaultProducts(): Flow<Result<List<Product>>> = flow{
+    override fun getDefaultProducts(): Flow<Result<List<Product>>> = flow {
         emit(Result.Loading())
         try {
             val response = meliApi.searchItemsDefault().toProduct()
@@ -52,16 +55,32 @@ class ProductRepositoryImpl @Inject constructor(
         } catch (e: IOException) {
             emit(
                 Result.Error(
-                    message = "No se encuetra conexion con el servidor, revisa tu conexion",
+                    message = "No se encuentra conexion con el servidor, revisa tu conexion",
                     data = null
                 )
             )
         }
     }
 
-
-    override suspend fun getProductDetail(id: Int): Result<ProductDetails> {
-        TODO("Not yet implemented")
+    override suspend fun getProductDetail(itemId: String): Flow<Result<ProductDescription>> = flow {
+        emit(Result.Loading())
+        try {
+            val response = meliApi.descriptionItem(itemId).toProductDescription()
+            emit(Result.Success(response))
+        } catch (e: HttpException) {
+            emit(
+                Result.Error(
+                    message = "Ah ocurrido un error",
+                    data = null
+                )
+            )
+        } catch (e: IOException) {
+            emit(
+                Result.Error(
+                    message = "No se encuentra conexion con el servidor, revisa tu conexion",
+                    data = null
+                )
+            )
+        }
     }
-
 }
